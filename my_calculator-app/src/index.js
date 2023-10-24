@@ -1,7 +1,7 @@
 import React from "react";
-import REactDOM from "react-dom";
+import ReactDOM from "react-dom";
 import "./index.css"; //Se puede importar CSS ocualquier otros estilos aqui.
-import App from "./App"; //Importa el componente principal de tu aplicacion  en este caso una calculadora 
+import App from "./App/App"; //Importa el componente principal de tu aplicacion  en este caso una calculadora 
 
 ReactDOM.render(
   <React.StrictMode>
