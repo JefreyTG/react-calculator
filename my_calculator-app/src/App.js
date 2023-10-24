@@ -1,45 +1,51 @@
-import logo from './logo.svg';
-import './App.css';
-import { useState } from "react";
+import React, { Component} from "react";
+import "./App.css";
+import ButtonPanel from "./ButtonPanel";
+import Display from "./Display";
+// Esta es una calculadora creada con Reactjs. eta compuesta de 3 componentes => App, ButtonPanel, y Display. 
+//-----------****------****-----***----
 
-const Apps=()=>{const[input,setInput]=useState('');
-const handleClick=(value)=>{
-    setInput(input+value);
-};
-
-const calculateResult=()=>{
-    try{
-        setInput(eval(input).toString());
-    }catch(error){
-    setInput('Error');
-}
-};
+// Componente App: Este es componente principal, contendrá la lógica de la calculadora y a los otros componentes.
 
 
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      displayValue: "0"
+    };
+  }
 
-return(
-    <div className="calculator">
-        <div className="display">{input}</div>
-        <div className="buttons">
-            <button onClick={()=>handleClick("1")}>1</button>
-            <button onClick={()=>handleClick("2")}>2</button>
-            <button onClick={()=>handleClick("3")}>3</button>
-            <button onClick={()=>handleClick("+")}>+</button>
-            <button onClick={()=>handleClick("4")}>4</button>
-            <button onClick={()=>handleClick("5")}>5</button>
-            <button onClick={()=>handleClick("6")}>6</button>
-            <button onClick={()=>handleClick("-")}>-</button>
-            <button onClick={()=>handleClick("7")}>7</button>
-            <button onClick={()=>handleClick("8")}>8</button>
-            <button onClick={()=>handleClick("9")}>9</button>
-            <button onClick={()=>handleClick("*")}>*</button>
-            <button onClick={()=>handleClick("0")}>0</button>
-            <button onClick={()=>{handleClear}}>C</button>
-            <button onClick={calculateResult}>=</button>
-            <button onClick={()=>handleClick('/')}>/</button>
-        </div>
+render() {
+  return (
+    <div className="app">
+      <Display value={this.state.displayValue} />
+      <ButtonPanel />
     </div>
-);
-};
+  );
+}
+}
 
-export default Apps;
+handleButtonClick(value);{
+    this.setState((prevState)=> ({
+        displayValue: prevState.displayValue === "0" ? value : prevState.displayValue + value, 
+    }));
+
+    clearDisplay ();{
+        this.setState({displayValue: "0"});
+    };
+
+    calculateResult() ;{
+        try {
+            const result=eval(this.state.displayValue);
+            this.setState({ displayValue: result});
+        }catch(error) {
+            this.setState({displayValue: "Error"});
+        }
+    }
+}
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
