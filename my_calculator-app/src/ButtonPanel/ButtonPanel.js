@@ -1,12 +1,12 @@
 import React from "react";
-import "./ButtonPanel.css"
+import Button from "react-bootstrap/Button";
+import "./ButtonPanel.css";
 
 
 function ButtonPanel(props) {
-  // Supongo que `handleButtonClick`, `clearDisplay`, y `calculateResult` son funciones pasadas como props
   return (
+
     <div className="button-panel">
-      {/* Definir los botones aquí */}
       <Button onClick={() => props.handleButtonClick('7')}>7</Button>
       <Button onClick={() => props.handleButtonClick('8')}>8</Button>
       <Button onClick={() => props.handleButtonClick('9')}>9</Button>
@@ -21,10 +21,10 @@ function ButtonPanel(props) {
       <Button onClick={() => props.handleButtonClick('*')}>*</Button>
       <Button onClick={() => props.handleButtonClick('0')}>0</Button>
       <Button onClick={() => props.handleButtonClick('.')}>.</Button>
-      <Button onClick={() => props.clearDisplay()}>C</Button>
-      <Button onClick={() => props.calculateResult()}>=</Button>
+      <Button onClick={() => props.clearDisplay('')}>C</Button>
+      <Button onClick={() => props.calculateResult('=')}>=</Button>
     </div>
   );
 }
 
-export default ButtonPanel;
+export default  ButtonPanel;

@@ -1,7 +1,7 @@
 import React, { Component} from "react";
-import "./App.css";
-import ButtonPanel from "../ButtonPanel/ButtonPanel";
+import ButtonPanel from "../ButtonPanel/ButtonPanel.js"
 import Display from "../Display/Display";
+import "./App.css";
 // Esta es una calculadora creada con Reactjs. eta compuesta de 3 componentes => App, ButtonPanel, y Display. 
 //-----------****------****-----***----
 
@@ -18,14 +18,13 @@ class App extends Component {
 
 render() {
   return (
-    <div className="app">
-      <Display value={this.state.displayValue} />
+    <div className="my-app">
+      <Display value={this.state.displayValue} />,
       <ButtonPanel />
     </div>
   );
 }
 }
 
-
-
+export default App
 

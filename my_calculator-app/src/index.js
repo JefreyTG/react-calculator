@@ -1,14 +1,19 @@
+import * as ReactDOMClient from "react-dom/client";
 import React from "react";
-import ReactDOM from "react-dom";
-import "./index.css"; //Se puede importar CSS ocualquier otros estilos aqui.
 import App from "./App/App"; //Importa el componente principal de tu aplicacion  en este caso una calculadora 
+import "./index.css"; //Se puede importar CSS ocualquier otros estilos aqui.
 
-ReactDOM.render(
+const rootElement = document.getElementById("app");
+
+const root = ReactDOMClient.createRoot(rootElement)
+root.render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>,
-  document.getElementById("root")
+  </React.StrictMode>
 );
+
+    // Resto de tu código de renderizado
+
 
 // En este archivo Importamos React y reactDOM de sus respectivos paquetes. Estos son necesarios para crear y renderizar los componentes React en el navegador ---- tambien se importa CSS (la hoja de estilos) que qeriamos usar ----- Importamos el componente proncipal de la aplicacion "App" desde su carpeta de origen
 
