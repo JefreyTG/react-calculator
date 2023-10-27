@@ -24,7 +24,6 @@
     "npm-deep-update-g": "npm update --depth 9999 --dev -g",
     "npm-cache-clear": "npm cache clear --force",
     "update-all-modules": "npm run create-global-node-modules-folder && npm run npm-i-g && npm run npm-check-i-g && npm run npm-check-u-l && npm run npm-check-u-g && npm run npm-deep-update-l && npm run npm-deep-update-g && npm run npm-cache-clear"
-
   },
   "eslintConfig": {
     "extends": [
@@ -43,14 +42,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^6.0.0"
   }
-
-   
 }
-
-
-
-
-
-
-  
