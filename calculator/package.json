@@ -16,7 +16,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "create-global-node-modules-folder": "if not exist \"%appdata%\\npm\\node_modules\" mkdir %appdata%\\npm\\node_modules",
     "npm-i-g": "npm i npm@latest -g",
     "npm-check-i-g": "npm i npm-check@latest -g",
     "npm-check-u-l": "npm-check \"C:\\Program Files\\nodejs\\node_modules\\npm\" -y",
